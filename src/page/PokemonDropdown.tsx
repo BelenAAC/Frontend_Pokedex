@@ -9,6 +9,23 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 
+//image to pokemon
+import abra from '../images/pokemones/abra.png';
+import bulbasaur from '../images/pokemones/bulbasaur.png';
+import charmander from '../images/pokemones/charmander.png';
+import chikorita from '../images/pokemones/chikorita.png';
+import cyndaquil from '../images/pokemones/cyndaquil.png';
+import ditto from '../images/pokemones/ditto.png';
+import evee from '../images/pokemones/evee.png';
+import geodude from '../images/pokemones/geodude.png';
+import jigglypuff from '../images/pokemones/jigglypuff.png';
+import machop from '../images/pokemones/machop.png';
+import magikarp from '../images/pokemones/magikarp.png';
+import pikachu from '../images/pokemones/pikachu.png';
+import porygon from '../images/pokemones/porygon.png';
+import squirtle from '../images/pokemones/squirtle.png';
+import totodile from '../images/pokemones/totodile.png';
+
 interface Pokemon {
   id: string;
   nombre: string;
@@ -35,6 +52,25 @@ interface GetPokemonResponse {
 interface ListTypesResponse {
   listTypes: Type[];
 }
+// Mapea los nombres de tipo a las imágenes
+const nombreToImage: Record<string, string> = {
+  'Charmander': charmander,
+  'Squirtle': squirtle,
+  'Pikachu': pikachu,
+  'Abra': abra,
+  'Bulbasaur':bulbasaur,
+  'Chikorita': chikorita,
+  'Cyndaquil': cyndaquil,
+  'Ditto': ditto,
+  'Eevee': evee,
+  'Geodude': geodude,
+  'Jigglypuff': jigglypuff,
+  'Machop': machop,
+  'Magikarp': magikarp,
+  'Porygon': porygon,
+  'Totodile': totodile,
+};
+
 
 function PokemonDropdown() {
   const { loading: loadingList, error: errorList, data: dataList } = useQuery<ListPokemonsResponse>(LIST_POKEMONS);
@@ -54,11 +90,10 @@ function PokemonDropdown() {
     setShowTypeDetails(false);
   };
 
+  
   const getImageForPokemonType = (pokemonType: string) => {
-    const type = dataTypes?.listTypes.find((type) => type.nombre === pokemonType);
-    return type?.imagenUrl || '';
+    return nombreToImage[pokemonType] || '';
   };
-
   const getDescriptionForPokemonType = (pokemonType: string) => {
     const type = dataTypes?.listTypes.find((type) => type.nombre === pokemonType);
     return type?.descripcion || '';
@@ -89,10 +124,10 @@ function PokemonDropdown() {
           <h2>Detalles del Pokémon</h2>
           <Card>
             <CardActionArea>
-              <CardMedia
+            <CardMedia
                 component="img"
-                height="140"
-                image={getImageForPokemonType(dataDetails?.getPokemon.tipo)}
+                height="340"
+                image={getImageForPokemonType(dataDetails?.getPokemon.nombre)}
                 alt={dataDetails?.getPokemon.nombre}
               />
               <CardContent>

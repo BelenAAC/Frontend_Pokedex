@@ -30,9 +30,17 @@ function PokemonCreationPage() {
       });
 
       console.log('Pokemon creado:', data.createPokemon);
+
+      // Recargar la página solo después de una creación exitosa
+      location.reload();
     } catch (error) {
       console.error('Error al crear el Pokémon:', error);
     }
+  
+  };
+
+  const handleReload = () => {
+      location.reload();
   };
 
   return (
@@ -64,7 +72,10 @@ function PokemonCreationPage() {
           <input type="text" name="movimiento" value={pokemonData.movimiento} onChange={handleInputChange} />
         </label>
         <br />
-        <button type="submit">Crear Pokémon</button>
+        <button  color="success">
+          Crear Pokémon
+          </button>
+        
       </form>
     </div>
   );
