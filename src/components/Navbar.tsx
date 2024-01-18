@@ -20,6 +20,7 @@ const pages = [
   { label: 'Tipos', path: '/types' },
   { label: 'Pokedex', path: '/dropdown' },
   { label: 'Capturar', path: '/create' },
+  { label: 'agregar Tipo', path: '/createType' },
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];

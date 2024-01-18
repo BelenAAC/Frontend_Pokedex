@@ -1,4 +1,3 @@
-// App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloProvider } from "@apollo/client";
@@ -8,6 +7,7 @@ import PokemonListPage from './page/PokemonListPage';
 import TypeListPage from './page/TypeListPage';
 import PokemonDropdown from './page/PokemonDropdown';
 import PokemonCreationPage from './page/PokemonCreationPage';
+import TypeCreationPage from './page/TypeCreationPage';
 
 export const App = () => {
   return (
@@ -20,6 +20,7 @@ export const App = () => {
             <Route path="/types" element={<TypeListPage />} />
             <Route path="/dropdown" element={<PokemonDropdown />} />
             <Route path="/create" element={<PokemonCreationPage />} />
+            <Route path="/createType" element ={<TypeCreationPage/>}/>
           </Routes>
         </div>
       </Router>
