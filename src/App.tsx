@@ -8,6 +8,8 @@ import TypeListPage from './page/TypeListPage';
 import PokemonDropdown from './page/PokemonDropdown';
 import PokemonCreationPage from './page/PokemonCreationPage';
 import TypeCreationPage from './page/TypeCreationPage';
+import LoginPage from './page/LoginPage';
+import PokemonListAndMasterCreation from './page/MasterCreationPage';
 
 export const App = () => {
   return (
@@ -21,6 +23,8 @@ export const App = () => {
             <Route path="/dropdown" element={<PokemonDropdown />} />
             <Route path="/create" element={<PokemonCreationPage />} />
             <Route path="/createType" element ={<TypeCreationPage/>}/>
+            <Route path="/auth" element ={<LoginPage/>}/>
+            <Route path="/register" element ={<PokemonListAndMasterCreation/>}/>
           </Routes>
         </div>
       </Router>

@@ -21,6 +21,8 @@ const pages = [
   { label: 'Pokedex', path: '/dropdown' },
   { label: 'Capturar', path: '/create' },
   { label: 'agregar Tipo', path: '/createType' },
+  { label: 'Cuenta', path: '/auth' },
+  { label: 'Registro', path: '/register' },
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];

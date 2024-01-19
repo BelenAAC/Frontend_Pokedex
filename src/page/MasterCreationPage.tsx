@@ -53,8 +53,8 @@ const PokemonListAndMasterCreation: React.FC = () => {
           },
         },
       });
-
       setMessage(`Master creado con éxito. ID: ${createMasterData.createMaster.id}`);
+      location.reload();
     } catch (error) {
       setMessage(`Error al crear el Master: ${error.message}`);
     }
